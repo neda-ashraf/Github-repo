@@ -26,10 +26,18 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <input type="text" onChange={(e) => setUsername(e.target.value)} />
-      <button onClick={handleFetch}>Search</button>
-      <div className="">
+    <div className='fields'>
+      <div className="input"><input type="text" onChange={(e) => setUsername(e.target.value)} />
+        <button className="search" onClick={handleFetch}>Search</button>
+        <div className="dropdown">
+          <button className="dropbtn">Filter</button>
+          <div className="dropdown-content">
+            <a href="#">Stars</a>
+            <a href="#">Forks</a>
+          </div>
+        </div>
+      </div>
+      <div className="cards">
         {
           userData.map((item: any, index: number) => (
             <Card
